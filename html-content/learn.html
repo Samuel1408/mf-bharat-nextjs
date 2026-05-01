@@ -1,0 +1,332 @@
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="ambient-bg"><div class="aurora aurora-1"></div><div class="aurora aurora-2"></div><div class="bg-grid"></div></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo mag-btn" style="gap:0;text-decoration:none;"><img src="/MF Bharat.png" alt="MF Bharat Logo" style="height:32px;width:auto;max-width:150px;object-fit:contain;"></a>
+    <div class="center-nav-links">
+      <a href="/" class="nav-link-item">Home</a>
+      <a href="/categories" class="nav-link-item">Categories</a>
+      <a href="/explore" class="nav-link-item">Explore</a>
+      <a href="/amcs" class="nav-link-item">AMCs</a>
+      <a href="/nfos" class="nav-link-item">NFOs</a>
+      <a href="/learn" class="nav-link-item active">Learn &amp; Grow</a>
+      <div class="nav-dropdown"><span class="nav-link-item" style="cursor:pointer;">Tools &#9660;</span><div class="dropdown-content glass-card"><a href="/calculators">Calculators</a><a href="/compare">Compare Funds</a></div></div>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle mag-btn" id="themeToggle" aria-label="Toggle theme"><div class="toggle-track"><div class="toggle-thumb"><span class="toggle-icon sun">&#9728;&#65039;</span><span class="toggle-icon moon">&#127769;</span></div></div></button>
+        <a href="#download" class="header-download-btn">Get App</a>
+      <a href="#" class="btn-primary glow-btn mag-btn download-trigger">Get App</a>
+    </div>
+  </div>
+</nav>
+
+<div class="activity-ticker-bar" aria-hidden="true"><div class="activity-ticker-track">
+  <span class="activity-ticker-item"><span class="t-dot"></span>Rahul &middot; Delhi invested &#8377;500 in SBI Bluechip Fund</span><span class="activity-ticker-sep">&bull;</span>
+  <span class="activity-ticker-item"><span class="t-dot"></span>Priya &middot; Mumbai started SIP of &#8377;2,000 in Mirae Tax Saver</span><span class="activity-ticker-sep">&bull;</span>
+  <span class="activity-ticker-item"><span class="t-dot"></span>Ananya &middot; Lucknow invested &#8377;1,000 in DSP Midcap Fund</span><span class="activity-ticker-sep">&bull;</span>
+  <span class="activity-ticker-item"><span class="t-dot"></span>Rahul &middot; Delhi invested &#8377;500 in SBI Bluechip Fund</span><span class="activity-ticker-sep">&bull;</span>
+  <span class="activity-ticker-item"><span class="t-dot"></span>Priya &middot; Mumbai started SIP of &#8377;2,000 in Mirae Tax Saver</span><span class="activity-ticker-sep">&bull;</span>
+</div></div>
+
+<section class="learn-hero">
+  <div class="container">
+    <div class="learn-hero-inner">
+      <div class="learn-hero-text reveal-up" style="--delay:0s;">
+        <div class="hero-badge" style="display:inline-flex;margin-bottom:20px;"><span class="pulse-dot"></span>48 articles &amp; counting</div>
+        <h1>Learn investing.<br/><span class="text-glow">Grow confidently.</span></h1>
+        <p>Plain-language guides, real numbers, zero jargon. Whether you're putting in your first &#8377;100 or scaling to &#8377;1 lakh/month.</p>
+        <div class="learn-stats-row">
+          <div><div class="ls-val">48</div><div class="ls-lbl">Articles</div></div>
+          <div><div class="ls-val">6</div><div class="ls-lbl">Topics</div></div>
+          <div><div class="ls-val">2.4L+</div><div class="ls-lbl">Monthly Readers</div></div>
+        </div>
+      </div>
+      <div class="trending-card reveal-up" style="--delay:0.15s;">
+        <div class="trending-label"><span class="pulse-dot" style="width:6px;height:6px;"></span>Trending now</div>
+        <a href="/learn/sip-vs-lumpsum" class="trending-item"><span class="t-num">1</span><span class="t-title">&#128200; SIP vs FD: 10-year comparison with real data</span></a>
+        <a href="/learn/elss-funds-tax-saving" class="trending-item"><span class="t-num">2</span><span class="t-title">&#128178; ELSS: Save &#8377;46,800 in tax this year</span></a>
+        <a href="/learn/step-up-sip" class="trending-item"><span class="t-num">3</span><span class="t-title">&#9889; Why increase your SIP by 10% every year</span></a>
+        <a href="/learn/expense-ratio" class="trending-item"><span class="t-num">4</span><span class="t-title">&#127919; Expense Ratio: the silent wealth killer</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bento-section" style="padding-top:0;">
+  <div class="container">
+    <div class="cat-filter-row reveal-up" style="--delay:0s;" id="catFilterRow">
+      <button class="cat-btn active" data-cat="all">All Topics</button>
+      <button class="cat-btn" data-cat="beginner"><span class="c-dot" style="background:#22c55e;"></span>Beginner</button>
+      <button class="cat-btn" data-cat="sip"><span class="c-dot" style="background:#38bdf8;"></span>SIP Strategy</button>
+      <button class="cat-btn" data-cat="tax"><span class="c-dot" style="background:#a78bfa;"></span>Tax Saving</button>
+      <button class="cat-btn" data-cat="market"><span class="c-dot" style="background:#fb923c;"></span>Market Insights</button>
+      <button class="cat-btn" data-cat="advanced"><span class="c-dot" style="background:#f43f5e;"></span>Advanced</button>
+    </div>
+
+    <!-- Featured -->
+    <div class="featured-banner reveal-up" style="--delay:0.1s;" data-cat="sip" id="featuredBanner">
+      <div class="fb-deco"></div>
+      <a href="/learn/500-sip-42-lakh" class="fb-content" style="text-decoration:none;color:inherit;display:block;">
+        <div class="fb-badge">&#11088; Featured Read</div>
+        <div class="fb-tag">SIP Strategy</div>
+        <div class="fb-title">The &#8377;500 SIP that turned into &#8377;42 Lakh &mdash; a true story from Jaipur</div>
+        <div class="fb-meta"><span>Arjun Mehta</span><span>&bull;</span><span>8 min read</span><span>&bull;</span><span>Jan 2026</span></div>
+      </a>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articlesGrid">
+
+      <a class="ac reveal-up" style="--delay:0.1s;" href="/learn/what-is-a-mutual-fund" data-cat="beginner">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#064e3b,#065f46);">&#129297;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#22c55e;">Beginner</div>
+          <div class="ac-title">What is a Mutual Fund? The simplest explanation.</div>
+          <div class="ac-excerpt">A big pot of money where people pool in together, and a professional invests it on their behalf.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#22c55e;">R</div><span class="ac-name">Ritu Sharma</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.13s;" href="/learn/sip-vs-lumpsum" data-cat="sip">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#0c4a6e,#075985);">&#128200;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#38bdf8;">SIP Strategy</div>
+          <div class="ac-title">SIP vs Lumpsum: Which wins after 10 years?</div>
+          <div class="ac-excerpt">We ran the numbers across 20 years of Nifty data. The answer surprises most people during market crashes.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#38bdf8;">A</div><span class="ac-name">Arjun Mehta</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.16s;" href="/learn/elss-funds-tax-saving" data-cat="tax">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#3b0764,#4c1d95);">&#127919;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#a78bfa;">Tax Saving</div>
+          <div class="ac-title">ELSS Funds: Save &#8377;46,800 in tax with one investment</div>
+          <div class="ac-excerpt">Section 80C deductions are the easiest personal finance win. ELSS makes it better &mdash; your money grows too.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#a78bfa;">P</div><span class="ac-name">Priya Nair</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>6 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.1s;" href="/learn/market-crashes-sip" data-cat="market">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#431407,#7c2d12);">&#9889;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#fb923c;">Market Insights</div>
+          <div class="ac-title">Why market crashes are good for your SIP</div>
+          <div class="ac-excerpt">When markets fall 30%, your SIP buys more units. Rupee cost averaging is your silent compounding weapon.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#fb923c;">K</div><span class="ac-name">Kiran Patel</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.13s;" href="/learn/expense-ratio" data-cat="advanced">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#450a0a,#7f1d1d);">&#128302;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#f43f5e;">Advanced</div>
+          <div class="ac-title">Expense Ratio: The silent killer of long-term wealth</div>
+          <div class="ac-excerpt">A 1.5% fee on a 12% return sounds tiny. Over 30 years it eats 26% of your final corpus. Here's how to fight it.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#f43f5e;">S</div><span class="ac-name">Siddharth Roy</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.16s;" href="/learn/start-sip-100" data-cat="beginner">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#052e16,#14532d);">&#128176;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#22c55e;">Beginner</div>
+          <div class="ac-title">Start a SIP with &#8377;100 &mdash; step-by-step guide</div>
+          <div class="ac-excerpt">Download, KYC in 60 seconds, pick a fund. Your first SIP is live in under 3 minutes. No paperwork.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#22c55e;">M</div><span class="ac-name">Meera Joshi</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.1s;" href="/learn/step-up-sip" data-cat="sip">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#0a2540,#0e3d5e);">&#128269;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#38bdf8;">SIP Strategy</div>
+          <div class="ac-title">Step-Up SIP: Increase 10%/year, multiply wealth by 2x</div>
+          <div class="ac-excerpt">Start at &#8377;1,000 and raise 10% every year. In 20 years the difference vs flat SIP is &#8377;28 lakh+.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#38bdf8;">V</div><span class="ac-name">Vikram Das</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>6 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.13s;" href="/learn/ltcg-vs-stcg" data-cat="tax">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#2e1065,#3b0764);">&#128203;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#a78bfa;">Tax Saving</div>
+          <div class="ac-title">LTCG vs STCG: When should you redeem?</div>
+          <div class="ac-excerpt">Hold 12+ months = 10% tax. Sell before = 15%. On &#8377;5 lakh that difference is &#8377;25,000 in your pocket.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#a78bfa;">N</div><span class="ac-name">Neha Gupta</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7 min</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="ac reveal-up" style="--delay:0.16s;" href="/learn/portfolio-rebalancing" data-cat="advanced">
+        <div class="ac-thumb" style="background:linear-gradient(135deg,#1c1917,#292524);">&#127974;</div>
+        <div class="ac-body">
+          <div class="ac-tag" style="color:#f43f5e;">Advanced</div>
+          <div class="ac-title">Portfolio rebalancing: Keep asset allocation on track</div>
+          <div class="ac-excerpt">Your 60/40 equity-debt split drifts as markets move. Rebalancing annually keeps you in full control.</div>
+          <div class="ac-foot">
+            <div class="ac-auth"><div class="ac-av" style="background:#f43f5e;">A</div><span class="ac-name">Ankit Singh</span></div>
+            <div class="ac-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11 min</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Glossary -->
+<section class="bento-section" style="padding-top:64px;">
+  <div class="container">
+    <h2 class="section-title reveal-up" style="--delay:0s;">Quick <span class="text-glow">Concepts</span></h2>
+    <p class="section-subtitle reveal-up" style="--delay:0.05s;margin-bottom:24px;">Key terms every investor should know</p>
+    <div class="glossary-grid">
+      <div class="gc reveal-up" style="--delay:0.08s;"><div class="gc-term">NAV</div><div class="gc-def">Net Asset Value &mdash; the price of one unit of a mutual fund. Calculated daily at market close.</div></div>
+      <div class="gc reveal-up" style="--delay:0.1s;"><div class="gc-term">AUM</div><div class="gc-def">Assets Under Management &mdash; total money managed. Focus on consistency, not just size.</div></div>
+      <div class="gc reveal-up" style="--delay:0.12s;"><div class="gc-term">Expense Ratio</div><div class="gc-def">Annual fee as % of investment. Lower = more wealth with you. Direct plans save 0.5&ndash;1% per year.</div></div>
+      <div class="gc reveal-up" style="--delay:0.14s;"><div class="gc-term">CAGR</div><div class="gc-def">Compounded Annual Growth Rate &mdash; the honest way to measure investment performance over time.</div></div>
+      <div class="gc reveal-up" style="--delay:0.16s;"><div class="gc-term">ELSS</div><div class="gc-def">Equity Linked Savings Scheme &mdash; tax-saving fund with 3-year lock-in. Best 80C option for most.</div></div>
+      <div class="gc reveal-up" style="--delay:0.18s;"><div class="gc-term">SWP</div><div class="gc-def">Systematic Withdrawal Plan &mdash; a monthly withdrawal from your corpus. Retirement income, automated.</div></div>
+      <div class="gc reveal-up" style="--delay:0.2s;"><div class="gc-term">Benchmark</div><div class="gc-def">Index a fund is measured against (e.g. Nifty 50). Your fund should beat its benchmark consistently.</div></div>
+      <div class="gc reveal-up" style="--delay:0.22s;"><div class="gc-term">Alpha</div><div class="gc-def">Extra return above the benchmark. Positive alpha means the fund manager adds genuine value.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="bento-section" style="padding-top:60px;padding-bottom:80px;">
+  <div class="container">
+    <div class="nl-band reveal-up" style="--delay:0.1s;">
+      <div class="nl-text">
+        <h3>&#128140; Weekly insight &mdash; free.</h3>
+        <p>Every Sunday: one concept, one chart, one action. Under 3 minutes. Join 40,000+ readers.</p>
+      </div>
+      <form class="nl-form" id="nlForm">
+        <input class="nl-input" type="email" placeholder="your@email.com" required />
+        <button type="submit" class="btn-primary glow-btn mag-btn">Subscribe Free</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="bottom-dock">
+  <div class="dock-inner glass-card">
+    <div class="dock-text">Har Ghar Mutual Fund</div>
+    <a href="#" class="btn-primary glow-btn mag-btn download-trigger">Get App — Free</a>
+  </div>
+</div>
+
+<footer class="main-footer reveal-up" style="--delay:0.1s">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo mag-btn"><img src="/MF Bharat.png" alt="MF Bharat" style="height:40px;width:auto;object-fit:contain;"></a>
+        <p class="footer-desc">India's most powerful micro-investment engine. Compounding your wealth one SIP at a time.</p>
+      </div>
+      <div class="footer-links"><h4>Product</h4><a href="/explore">Explore Funds</a><a href="/amcs">AMCs</a><a href="/calculators">Calculator</a><a href="/compare">Compare Funds</a></div>
+      <div class="footer-links"><h4>Company</h4><a href="/about">About Us</a><a href="/careers">Careers</a><a href="/learn">Learn &amp; Grow</a><a href="/contact">Contact</a></div>
+      <div class="footer-links"><h4>Legal</h4><a href="/terms">Terms of Service</a><a href="/privacy">Privacy Policy</a><a href="/sebi-disclosures">SEBI Disclosures</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="compliance-text">Mutual Fund investments are subject to market risks, read all scheme related documents carefully. MF Bharat is an AMFI registered mutual fund distributor. ARN-123456.</p>
+      <div class="copyright">&copy; 2026 MF Bharat Inc. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<nav class="mobile-nav-dock">
+  <a href="/" class="mobile-nav-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Home</span></a>
+  <a href="/explore" class="mobile-nav-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Explore</span></a>
+  <a href="/amcs" class="mobile-nav-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg><span>AMCs</span></a>
+  <a href="/learn" class="mobile-nav-item active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span>Learn</span></a>
+    <button class="mobile-nav-item" id="toolsNavBtn" aria-label="Tools"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="12" y1="18" x2="14" y2="18"/><line x1="16" y1="18" x2="16" y2="18"/></svg><span>Tools</span></button>
+</nav>
+
+<div class="tools-sheet-backdrop" id="toolsBackdrop"></div>
+<div class="tools-sheet" id="toolsSheet" role="dialog" aria-modal="true" aria-label="Tools">
+  <div class="tools-sheet-handle"></div>
+  <p class="tools-sheet-heading">Tools</p>
+  <a href="/calculators" class="tools-sheet-item">
+    <span class="tools-sheet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="12" y1="18" x2="14" y2="18"/><line x1="16" y1="18" x2="16" y2="18"/></svg></span>
+    <div><div class="tools-sheet-title">Calculator</div><div class="tools-sheet-desc">SIP, Lumpsum, SWP &amp; Step-up</div></div>
+    <svg class="tools-sheet-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+  <a href="/compare" class="tools-sheet-item">
+    <span class="tools-sheet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></span>
+    <div><div class="tools-sheet-title">Compare Funds</div><div class="tools-sheet-desc">Side-by-side fund comparison</div></div>
+    <svg class="tools-sheet-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+</div>
+
+
+<!-- LEAD CAPTURE MODAL -->
+<div id="leadModal" class="lead-modal-overlay" aria-hidden="true">
+  <div class="lead-modal-box">
+
+    <!-- Header -->
+    <div class="lead-modal-header">
+      <div>
+        <p class="lead-modal-eyebrow">Free &middot; Takes 10 seconds</p>
+        <h2 class="lead-modal-title">Get the MF Bharat App</h2>
+        <p class="lead-modal-sub">We'll send the download link to your WhatsApp instantly.</p>
+      </div>
+      <button class="lead-modal-close" id="leadModalClose" aria-label="Close">&times;</button>
+    </div>
+
+    <!-- Form -->
+    <div id="leadFormWrap">
+      <div class="lead-field">
+        <label class="lead-label">Your Name</label>
+        <input type="text" id="leadName" class="lead-input" placeholder="Raj Kumar" autocomplete="name" />
+      </div>
+      <div class="lead-field">
+        <label class="lead-label">Email Address</label>
+        <input type="email" id="leadEmail" class="lead-input" placeholder="raj@example.com" autocomplete="email" />
+      </div>
+      <div class="lead-field">
+        <label class="lead-label">WhatsApp Number</label>
+        <div class="lead-phone-row">
+          <span class="lead-prefix">&#127470;&#127475; +91</span>
+          <input type="tel" id="leadPhone" class="lead-input lead-phone-input" placeholder="98765 43210" maxlength="10" autocomplete="tel" />
+        </div>
+      </div>
+      <p class="lead-error" id="leadError"></p>
+      <button class="lead-submit-btn" id="leadSubmit">
+        Send me the link on WhatsApp &rarr;
+      </button>
+      <p class="lead-fine">No spam. Only the download link. Unsubscribe anytime.</p>
+    </div>
+
+    <!-- Success State -->
+    <div id="leadSuccess" class="lead-success-wrap" style="display:none">
+      <div class="lead-success-icon">&#10003;</div>
+      <h3 class="lead-success-title">Check your WhatsApp!</h3>
+      <p class="lead-success-sub">The MF Bharat download link is on its way. Open WhatsApp and tap the message to install.</p>
+      <button class="lead-whatsapp-btn" id="leadOpenWA">Open WhatsApp Now</button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,480 @@
+<!-- ── Exit Confirmation Dialog ── -->
+<div class="kyc-dialog-overlay" id="kycExitDialog" role="dialog" aria-modal="true" aria-labelledby="kycExitDialogTitle">
+  <div class="kyc-dialog">
+    <div class="kyc-dialog-icon">⚠️</div>
+    <h2 id="kycExitDialogTitle">Exit KYC?</h2>
+    <p>Your progress will be lost. Are you sure you want to exit?</p>
+    <div class="kyc-dialog-btns">
+      <button class="kyc-dialog-cancel" id="kycExitCancel">Cancel</button>
+      <button class="kyc-dialog-exit-btn" id="kycExitConfirm">Exit</button>
+    </div>
+  </div>
+</div>
+
+<div class="kyc-layout">
+
+  <!-- ══════════════════════════════════════
+       LEFT SIDEBAR
+  ══════════════════════════════════════ -->
+  <aside class="kyc-sidebar">
+
+    <!-- Logo -->
+    <div class="kyc-sb-logo">
+      <a href="/" title="Back to MF Bharat">
+        <img src="/MF Bharat.png"      alt="MF Bharat" class="kyc-sb-logo-light">
+        <img src="/MF Bharat Logo.svg" alt="MF Bharat" class="kyc-sb-logo-dark">
+      </a>
+    </div>
+
+    <!-- Section label -->
+    <div class="kyc-sb-heading">KYC Process</div>
+
+    <!-- Steps — built by JS -->
+    <nav class="kyc-sb-steps" id="kycSidebar"></nav>
+
+    <!-- Bottom actions -->
+    <div class="kyc-sb-bottom">
+      <button class="kyc-sb-action" id="kycThemeToggle" aria-label="Toggle theme">
+        <span class="kyc-sb-action-icon" id="kycSbThemeIcon">🌙</span>
+        <span id="kycSbThemeLabel">Dark Mode</span>
+      </button>
+      <!-- Exit KYC — sidebar version (intercepted by JS) -->
+      <button class="kyc-sb-action kyc-sb-exit" id="kycSbExit">
+        <span class="kyc-sb-action-icon">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </span>
+        <span>Exit KYC</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ══════════════════════════════════════
+       MAIN AREA
+  ══════════════════════════════════════ -->
+  <div class="kyc-main">
+
+    <!-- Session restore banner -->
+    <div class="kyc-session-banner" id="kycSessionBanner" style="display:none;">
+      <span class="kyc-session-banner-icon">👋</span>
+      <span class="kyc-session-banner-text">Welcome back — continuing where you left off</span>
+      <button class="kyc-session-fresh-btn" id="kycStartFresh">Start fresh</button>
+    </div>
+
+    <!-- Topbar -->
+    <header class="kyc-topbar">
+
+      <!-- Mobile logo -->
+      <a href="/" class="kyc-topbar-logo">
+        <img src="/MF Bharat.png"       alt="MF Bharat" class="kyc-logo-light">
+        <img src="/MF Bharat Logo.svg"  alt="MF Bharat" class="kyc-logo-dark">
+      </a>
+
+      <!-- Step title -->
+      <div class="kyc-topbar-center">
+        <span class="kyc-topbar-title" id="kycTopTitle">Enter your details</span>
+        <span class="kyc-topbar-sub"   id="kycTopSub">Step 1 of 8</span>
+      </div>
+
+      <!-- Progress + mobile controls -->
+      <div class="kyc-topbar-right">
+        <div class="kyc-topbar-prog-wrap">
+          <div class="kyc-topbar-prog-track">
+            <div class="kyc-topbar-prog-fill" id="kycTopFill" style="width:12%"></div>
+          </div>
+          <span class="kyc-topbar-pct" id="kycTopPct">12%</span>
+        </div>
+        <!-- Mobile: percentage only -->
+        <span class="kyc-topbar-pct" id="kycMobPct" style="display:none;">12%</span>
+        <!-- Mobile theme toggle -->
+        <button class="kyc-theme-mob" id="kycThemeMob" aria-label="Toggle theme">🌙</button>
+        <!-- Mobile exit (intercepted by JS) -->
+        <button class="kyc-mob-exit" id="kycMobExit">Exit</button>
+      </div>
+    </header>
+
+    <!-- Mobile step stepper -->
+    <div class="kyc-mob-stepper">
+      <div class="kyc-mob-stepper-inner" id="kycMobStepperInner"></div>
+    </div>
+
+    <!-- Content -->
+    <main class="kyc-content">
+      <div class="kyc-card" id="kycCard">
+
+        <!-- Hidden compat progress -->
+        <div class="kyc-card-progress" id="kycProgressWrap">
+          <div class="kyc-card-progress-labels">
+            <span id="kycStepLabel">Step 1 of 8</span>
+            <span id="kycStepPct">12% complete</span>
+          </div>
+          <div class="kyc-card-progress-track">
+            <div class="kyc-card-progress-fill" id="kycProgressFill" style="width:12%"></div>
+          </div>
+        </div>
+
+        <!-- ── STEP 1 ── -->
+        <div class="kyc-step" data-step="1">
+          <div class="kyc-eyebrow">Free — Takes 60 Seconds</div>
+          <h1 class="kyc-h1">Enter your details</h1>
+          <p class="kyc-sub">We'll verify your identity before you start investing. Your phone and email are needed to send OTPs.</p>
+          <div class="kyc-field">
+            <label class="kyc-label">WhatsApp / Phone Number</label>
+            <div class="kyc-prefix-row">
+              <div class="kyc-prefix">🇮🇳 +91</div>
+              <input id="kycPhone" class="kyc-input" type="tel" placeholder="98765 43210" maxlength="10" inputmode="numeric">
+            </div>
+          </div>
+          <div class="kyc-field" style="margin-bottom:24px;">
+            <label class="kyc-label">Email Address</label>
+            <input id="kycEmail" class="kyc-input" type="email" placeholder="raj@example.com">
+          </div>
+          <button id="kycStep1Cta" class="kyc-btn kyc-btn-primary" style="opacity:0.4;" disabled>Send Verification Code →</button>
+          <p style="text-align:center;font-size:12px;color:#94A3B8;margin-top:10px;">By continuing you agree to our <span style="color:#F97316;cursor:pointer;">Terms</span> &amp; <span style="color:#F97316;cursor:pointer;">Privacy Policy</span></p>
+        </div>
+
+        <!-- ── STEP 2 ── -->
+        <div class="kyc-step" data-step="2">
+          <div class="kyc-eyebrow">2-Step Verification</div>
+          <h1 class="kyc-h1">Confirm your identity</h1>
+          <p class="kyc-sub">Enter the 6-digit codes sent to your phone and email.</p>
+          <div class="kyc-inner-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <div>
+                <p style="font-size:11px;color:#94A3B8;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:2px;">Phone Code</p>
+                <p id="kycPhoneMask" style="font-size:13px;font-weight:600;color:#0F1D3E;">Sent to +91 &middot;&middot;&middot;&middot;&middot;</p>
+              </div>
+              <button id="kycResendPhone" class="kyc-otp-resend" disabled>Resend in 30s</button>
+            </div>
+            <div class="kyc-otp-row">
+              <input class="kyc-otp-input kyc-p-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-p-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-p-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-p-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-p-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-p-otp" type="tel" maxlength="1" inputmode="numeric">
+            </div>
+          </div>
+          <div class="kyc-inner-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <div>
+                <p style="font-size:11px;color:#94A3B8;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:2px;">Email Code</p>
+                <p id="kycEmailMask" style="font-size:13px;font-weight:600;color:#0F1D3E;">Sent to &middot;&middot;&middot;&middot;&middot;@email.com</p>
+              </div>
+              <button id="kycResendEmail" class="kyc-otp-resend" disabled>Resend in 30s</button>
+            </div>
+            <div class="kyc-otp-row">
+              <input class="kyc-otp-input kyc-e-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-e-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-e-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-e-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-e-otp" type="tel" maxlength="1" inputmode="numeric">
+              <input class="kyc-otp-input kyc-e-otp" type="tel" maxlength="1" inputmode="numeric">
+            </div>
+          </div>
+          <!-- OTP error -->
+          <div class="kyc-form-error" id="kycOtpError">⚠ Please enter both complete 6-digit codes before continuing.</div>
+          <button id="kycStep2Cta"  class="kyc-btn kyc-btn-primary">Verify &amp; Continue →</button>
+          <button id="kycStep2Back" class="kyc-btn kyc-btn-ghost">← Back</button>
+        </div>
+
+        <!-- ── STEP 3 (was 4) — PAN & personal info ── -->
+        <div class="kyc-step" data-step="3">
+          <div class="kyc-eyebrow">KYC Details</div>
+          <h1 class="kyc-h1">PAN &amp; personal info</h1>
+          <p class="kyc-sub">We auto-fetch your details from NSDL. Quick and paperless.</p>
+          <div class="kyc-field">
+            <label class="kyc-label">Full Name (as per PAN)</label>
+            <input id="kycName" class="kyc-input" placeholder="Raj Kumar Verma">
+          </div>
+          <div class="kyc-field" id="kycPanField">
+            <label class="kyc-label">PAN Number</label>
+            <input id="kycPan" class="kyc-input" placeholder="ABCDE1234F" maxlength="10" style="text-transform:uppercase;font-family:monospace;letter-spacing:0.12em;font-weight:700;">
+            <div class="kyc-field-error" id="kycPanError">Invalid PAN format. Please check and try again. (e.g. ABCDE1234F)</div>
+          </div>
+          <div class="kyc-field">
+            <label class="kyc-label">Date of Birth</label>
+            <div style="display:flex;gap:8px;">
+              <input id="kycDobD" class="kyc-input" placeholder="DD"   maxlength="2" inputmode="numeric" style="text-align:center;flex:1;">
+              <input id="kycDobM" class="kyc-input" placeholder="MM"   maxlength="2" inputmode="numeric" style="text-align:center;flex:1;">
+              <input id="kycDobY" class="kyc-input" placeholder="YYYY" maxlength="4" inputmode="numeric" style="text-align:center;flex:1.6;">
+            </div>
+          </div>
+          <div class="kyc-field">
+            <label class="kyc-label">Annual Income</label>
+            <select id="kycIncome" class="kyc-input kyc-select">
+              <option value="">Select income range</option>
+              <option value="below1">Below ₹1 Lakh</option>
+              <option value="1to5">₹1 – 5 Lakh</option>
+              <option value="5to10">₹5 – 10 Lakh</option>
+              <option value="10to25">₹10 – 25 Lakh</option>
+              <option value="above25">Above ₹25 Lakh</option>
+            </select>
+          </div>
+          <label class="kyc-consent kyc-consent-plain">
+            <input type="checkbox" id="kycResident">
+            <span>I am a resident of India or an NRI eligible under FEMA guidelines.</span>
+          </label>
+          <label class="kyc-consent kyc-consent-orange">
+            <input type="checkbox" id="kycConsent">
+            <span>I authorise MF Bharat to fetch my PAN-linked details from NSDL &amp; CDSL for KYC verification.</span>
+          </label>
+          <!-- Step 3 form-level error -->
+          <div class="kyc-form-error" id="kycPanFormError">⚠ Please fill all required fields correctly before continuing.</div>
+          <button id="kycStep3PanCta"  class="kyc-btn kyc-btn-primary" style="opacity:0.4;margin-top:8px;" disabled>Fetch &amp; Verify My Details →</button>
+          <button id="kycStep3PanBack" class="kyc-btn kyc-btn-ghost">← Back</button>
+        </div>
+
+        <!-- ── STEP 4 (was 5) — Verifying ── -->
+        <div class="kyc-step" data-step="4" style="text-align:center;padding:16px 0;">
+          <div id="kycSpinner" class="kyc-spinner"></div>
+          <div id="kycBigCheck" class="kyc-big-check" style="display:none;">✓</div>
+          <h2 id="kycVerifyTitle" style="font-size:22px;font-weight:800;color:#0F1D3E;margin-bottom:6px;">Fetching your details…</h2>
+          <p  id="kycVerifySub"   style="font-size:14px;color:#64748B;margin-bottom:28px;">Connecting to NSDL &amp; UIDAI…</p>
+          <div style="display:flex;flex-direction:column;gap:8px;text-align:left;margin-bottom:24px;">
+            <div class="kyc-inner-card kyc-verify-item" id="kycVI1">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:24px;height:24px;border-radius:50%;background:rgba(34,197,94,0.12);border:2px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:#22C55E;flex-shrink:0;">✓</div>
+                <div><div style="font-size:13px;font-weight:600;color:#0F1D3E;">PAN linked to NSDL</div><div style="font-size:11px;color:#94A3B8;margin-top:1px;">Verified successfully</div></div>
+              </div>
+            </div>
+            <div class="kyc-inner-card kyc-verify-item" id="kycVI2">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:24px;height:24px;border-radius:50%;background:rgba(34,197,94,0.12);border:2px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:#22C55E;flex-shrink:0;">✓</div>
+                <div><div style="font-size:13px;font-weight:600;color:#0F1D3E;">Mobile linked with Aadhaar &amp; PAN</div><div style="font-size:11px;color:#94A3B8;margin-top:1px;">OTP-based linkage confirmed</div></div>
+              </div>
+            </div>
+            <div class="kyc-inner-card kyc-verify-item" id="kycVI3">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:24px;height:24px;border-radius:50%;background:rgba(34,197,94,0.12);border:2px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:#22C55E;flex-shrink:0;">✓</div>
+                <div><div style="font-size:13px;font-weight:600;color:#0F1D3E;">Bank Account auto-detected</div><div style="font-size:11px;color:#94A3B8;margin-top:1px;">Kotak Mahindra Bank ···· 4521</div></div>
+              </div>
+            </div>
+            <div class="kyc-inner-card kyc-verify-item" id="kycVI4">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:24px;height:24px;border-radius:50%;background:rgba(34,197,94,0.12);border:2px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:#22C55E;flex-shrink:0;">✓</div>
+                <div><div style="font-size:13px;font-weight:600;color:#0F1D3E;">Aadhaar e-KYC approved</div><div style="font-size:11px;color:#94A3B8;margin-top:1px;">UIDAI verification complete</div></div>
+              </div>
+            </div>
+          </div>
+          <button id="kycVerifyCta" class="kyc-btn kyc-btn-primary" style="display:none;">Continue to Bank Linking →</button>
+        </div>
+
+        <!-- ── STEP 5 (was 6) — Bank ── -->
+        <div class="kyc-step" data-step="5">
+          <div class="kyc-eyebrow">Bank Account</div>
+          <h1 class="kyc-h1">Link your bank</h1>
+          <p class="kyc-sub">Auto-detected via Aadhaar &amp; PAN. Needed for SIP auto-debit and redemptions.</p>
+          <div class="kyc-inner-card" id="kycBankCard" style="margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div class="kyc-bank-logo">
+                <img src="/logos/Type=Kotak Mahindra.svg" alt="Kotak Mahindra Bank">
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:15px;font-weight:700;color:#0F1D3E;">Kotak Mahindra Bank</div>
+                <div style="font-size:13px;color:#64748B;margin-top:2px;">Savings · ···· ···· ···· 4521</div>
+                <div style="font-size:12px;color:#94A3B8;margin-top:1px;">IFSC: KKBK0000001</div>
+              </div>
+              <div id="kycBankTick" style="display:none;font-size:24px;color:#22C55E;">✓</div>
+            </div>
+            <div id="kycBankConfirmBar" style="display:none;margin-top:12px;padding:8px 12px;background:rgba(34,197,94,0.10);border-radius:8px;font-size:13px;color:#16A34A;font-weight:600;">✓ Account linked &amp; verified</div>
+          </div>
+
+          <!-- Not my bank link + manual form -->
+          <button class="kyc-manual-bank-toggle" id="kycManualBankToggle">This isn't my bank — enter manually</button>
+          <div class="kyc-manual-bank-form" id="kycManualBankForm">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.6;">Enter your bank account details manually for SIP auto-debit.</p>
+            <div class="kyc-field">
+              <label class="kyc-label">Account Number</label>
+              <input id="kycManualAccNo" class="kyc-input" type="tel" placeholder="e.g. 1234567890123456" inputmode="numeric">
+            </div>
+            <div class="kyc-field" style="margin-bottom:16px;">
+              <label class="kyc-label">IFSC Code</label>
+              <input id="kycManualIfsc" class="kyc-input" placeholder="e.g. HDFC0001234" maxlength="11" style="text-transform:uppercase;font-family:monospace;letter-spacing:0.1em;">
+            </div>
+            <button id="kycManualBankSubmit" class="kyc-btn kyc-btn-primary" style="margin-bottom:0;">Submit Bank Details →</button>
+          </div>
+
+          <!-- Bank error -->
+          <div class="kyc-form-error" id="kycBankError">⚠ Please link a bank account to continue.</div>
+          <button id="kycBankLinkBtn"     class="kyc-btn kyc-btn-primary">Submit to Link Bank →</button>
+          <button id="kycBankContinueBtn" class="kyc-btn kyc-btn-green"   style="display:none;">Continue to Nominee →</button>
+          <button id="kycStep5Back"       class="kyc-btn kyc-btn-ghost">← Back</button>
+        </div>
+
+        <!-- ── STEP 6 (was 7) — Nominee ── -->
+        <div class="kyc-step" data-step="6">
+          <div class="kyc-eyebrow">Nominee</div>
+          <h1 class="kyc-h1">Add a nominee</h1>
+          <p class="kyc-sub">SEBI guidelines require adding a nominee or signing a declaration to opt out.</p>
+          <div class="kyc-field">
+            <label class="kyc-label">Full Name</label>
+            <input id="kycNomName" class="kyc-input" placeholder="Nominee's full legal name">
+          </div>
+          <div class="kyc-field">
+            <label class="kyc-label">Date of Birth</label>
+            <div style="display:flex;gap:8px;">
+              <input id="kycNomD" class="kyc-input" placeholder="DD"   maxlength="2" inputmode="numeric" style="text-align:center;flex:1;">
+              <input id="kycNomM" class="kyc-input" placeholder="MM"   maxlength="2" inputmode="numeric" style="text-align:center;flex:1;">
+              <input id="kycNomY" class="kyc-input" placeholder="YYYY" maxlength="4" inputmode="numeric" style="text-align:center;flex:1.6;">
+            </div>
+          </div>
+          <div class="kyc-field">
+            <label class="kyc-label">Relationship</label>
+            <select id="kycNomRel" class="kyc-input kyc-select">
+              <option value="">Select relationship</option>
+              <option>Spouse</option><option>Father</option><option>Mother</option>
+              <option>Son</option><option>Daughter</option><option>Brother</option>
+              <option>Sister</option><option>Other</option>
+            </select>
+          </div>
+          <div class="kyc-field" style="margin-bottom:24px;">
+            <label class="kyc-label">Phone Number</label>
+            <div class="kyc-prefix-row">
+              <div class="kyc-prefix">+91</div>
+              <input id="kycNomPhone" class="kyc-input" type="tel" placeholder="98765 43210" maxlength="10" inputmode="numeric">
+            </div>
+          </div>
+          <button id="kycStep6NomCta"  class="kyc-btn kyc-btn-primary">Save Nominee →</button>
+
+          <!-- Opt-out button -->
+          <button id="kycStep6OptOut" class="kyc-btn kyc-btn-ghost" style="text-decoration:underline;font-size:13px;">Opt out — I declare I don't want to add a nominee</button>
+
+          <!-- Opt-out confirmation checkbox (shown after clicking opt-out) -->
+          <div class="kyc-optout-confirm" id="kycOptoutConfirm">
+            <label>
+              <input type="checkbox" id="kycOptoutCheck">
+              <span>I understand and declare that I do not wish to nominate anyone. I accept full responsibility.</span>
+            </label>
+            <button id="kycOptoutProceed" class="kyc-btn kyc-btn-red" style="margin-top:14px;opacity:0.4;" disabled>Proceed without nominee →</button>
+          </div>
+
+          <button id="kycStep6Back" class="kyc-btn kyc-btn-ghost">← Back</button>
+        </div>
+
+        <!-- ── STEP 7 (was 8) — Face Verification ── -->
+        <div class="kyc-step" data-step="7">
+          <div class="kyc-eyebrow">Face Verification</div>
+          <h1 class="kyc-h1" id="step8Title">Capture your face</h1>
+          <p class="kyc-sub" id="step8Body">Position your face in the oval. Good lighting, look straight at the camera.</p>
+          <div class="kyc-cam-wrap" id="kycCamWrap">
+            <div id="kycCamStub" style="text-align:center;padding:24px;">
+              <div style="font-size:48px;margin-bottom:10px;">📸</div>
+              <p style="color:rgba(255,255,255,0.35);font-size:13px;">Starting camera…</p>
+            </div>
+            <video id="kycVideo" autoplay playsinline muted style="display:none;width:100%;height:100%;object-fit:cover;"></video>
+            <img   id="kycSnapshot" style="display:none;width:100%;height:100%;object-fit:cover;" alt="Captured face">
+            <div class="kyc-oval-overlay" id="kycOvalOverlay"><div class="kyc-oval"></div></div>
+            <div id="kycPhotoBadge" style="display:none;position:absolute;top:12px;right:12px;width:42px;height:42px;background:#22C55E;border-radius:50%;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700;">✓</div>
+            <!-- Camera error: now shows inside the dark wrap, hidden by default -->
+            <div id="kycCamError" style="display:none;text-align:center;padding:24px;color:rgba(255,255,255,0.45);font-size:13px;line-height:1.6;">Camera unavailable.</div>
+          </div>
+          <canvas id="kycCanvas" style="display:none;"></canvas>
+
+          <!-- Camera fallback panel: shown when camera errors out -->
+          <div class="kyc-cam-fallback" id="kycCamFallback">
+            <div style="font-size:36px;margin-bottom:12px;">📵</div>
+            <div class="kyc-cam-fallback-title">Camera not available on this device</div>
+            <div class="kyc-cam-fallback-sub">No worries — you have two options to complete face verification:</div>
+            <button id="kycCamWaBtn" class="kyc-btn kyc-btn-wa" style="font-size:14px;">📲 Continue on your phone via WhatsApp</button>
+            <div style="font-size:12px;color:var(--hint);margin-bottom:14px;">We'll send a link to <strong id="kycCamWaPhoneLabel">your phone</strong> to complete face verification.</div>
+            <button id="kycSkipFaceBtn" class="kyc-btn kyc-btn-outline" style="font-size:14px;">Skip for now — verify in app</button>
+            <div class="kyc-cam-fallback-note">You can complete face verification inside the MF Bharat app after downloading.</div>
+          </div>
+
+          <div class="kyc-tips-grid" id="kycTipsGrid">
+            <div class="kyc-tip"><span>→</span>Remove glasses</div>
+            <div class="kyc-tip"><span>→</span>Look straight</div>
+            <div class="kyc-tip"><span>→</span>Good lighting</div>
+            <div class="kyc-tip"><span>→</span>No reflections</div>
+          </div>
+          <div id="kycBeforeCapture">
+            <button id="kycCaptureBtn" class="kyc-btn kyc-btn-primary" style="opacity:0.4;" disabled>📸 Capture Photo</button>
+            <!-- Desktop alt links (always visible below capture btn) -->
+            <div class="kyc-cam-alt-links" id="kycCamAltLinks">
+              <button class="kyc-cam-alt-link" id="kycCamAltWa">📲 Continue on phone</button>
+              <button class="kyc-cam-alt-link" id="kycCamAltSkip">Skip — verify in app</button>
+            </div>
+          </div>
+          <div id="kycAfterCapture" style="display:none;">
+            <div style="display:flex;gap:10px;">
+              <button id="kycRetakeBtn"  class="kyc-btn kyc-btn-outline" style="flex:1;padding:15px;">↺ Retake</button>
+              <button id="kycSubmitKyc"  class="kyc-btn kyc-btn-primary" style="flex:2;">Submit &amp; Complete KYC →</button>
+            </div>
+          </div>
+          <button id="kycStep7Back" class="kyc-btn kyc-btn-ghost">← Back</button>
+        </div>
+
+        <!-- ── STEP 8 (was 9) — Success ── -->
+        <div class="kyc-step" data-step="8" style="text-align:center;padding:8px 0;">
+          <div class="kyc-xl-check">✓</div>
+          <div style="font-size:11px;font-weight:700;color:#22C55E;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">KYC Complete 🎉</div>
+          <h1 class="kyc-h1" id="kycSuccessTitle" style="text-align:center;">You're all set!</h1>
+          <p class="kyc-sub" style="max-width:380px;margin:0 auto 20px;">Your KYC is verified. Download the app to start investing from ₹100/month.</p>
+          <div class="kyc-info-box" style="text-align:left;margin-bottom:20px;">
+            <span style="font-size:16px;flex-shrink:0;">ℹ️</span>
+            <span>SEBI requires SIP transactions inside a registered mobile app. Your KYC is done — the app is the final step.</span>
+          </div>
+          <div class="kyc-inner-card" style="text-align:left;margin-bottom:16px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:38px;height:38px;background:#25D366;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💬</div>
+              <div>
+                <div style="font-size:14px;font-weight:700;color:#0F1D3E;">Get app link on WhatsApp</div>
+                <div style="font-size:12px;color:#94A3B8;">Download link sent instantly</div>
+              </div>
+            </div>
+            <label class="kyc-label">Your WhatsApp Number</label>
+            <div class="kyc-prefix-row" style="margin-bottom:14px;">
+              <div class="kyc-prefix">🇮🇳 +91</div>
+              <input id="kycWaPhone" class="kyc-input" type="tel" placeholder="98765 43210" maxlength="10" inputmode="numeric">
+            </div>
+            <button id="kycWaCta" class="kyc-btn kyc-btn-wa">📲 Send Download Link on WhatsApp →</button>
+            <p style="text-align:center;font-size:11px;color:#94A3B8;margin-top:8px;">No spam. Only the download link.</p>
+          </div>
+          <div class="kyc-divider">OR</div>
+          <div class="kyc-store-row">
+            <a href="https://play.google.com/store/apps/details?id=com.mfbharat" target="_blank" rel="noreferrer" class="kyc-store-btn">
+              <div class="kyc-store-icon-wrap play">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.18 1.41C2.83 1.78 2.63 2.35 2.63 3.09V20.91C2.63 21.65 2.83 22.22 3.18 22.59L3.26 22.67L13.56 12.37V12.1V11.83L3.26 1.33L3.18 1.41Z" fill="url(#play_a)"/>
+                  <path d="M17.03 15.93L13.56 12.37V12.1V11.83L17.04 8.27L17.13 8.32L21.25 10.66C22.44 11.34 22.44 12.46 21.25 13.14L17.13 15.48L17.03 15.93Z" fill="url(#play_b)"/>
+                  <path d="M17.13 15.48L13.56 12L3.18 22.59C3.57 23.01 4.21 23.06 4.93 22.65L17.13 15.48Z" fill="url(#play_c)"/>
+                  <path d="M17.13 8.52L4.93 1.35C4.21 0.94 3.57 0.99 3.18 1.41L13.56 12L17.13 8.52Z" fill="url(#play_d)"/>
+                  <defs>
+                    <linearGradient id="play_a" x1="12.78" y1="2.28" x2="-1.21" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#00A0FF"/><stop offset="1" stop-color="#00AFFE"/></linearGradient>
+                    <linearGradient id="play_b" x1="23.12" y1="12" x2="2.42" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD000"/><stop offset=".41" stop-color="#FF9000"/><stop offset=".78" stop-color="#FF6900"/><stop offset="1" stop-color="#FF5900"/></linearGradient>
+                    <linearGradient id="play_c" x1="15.25" y1="14.05" x2="-4.09" y2="33.39" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3A44"/><stop offset="1" stop-color="#C31162"/></linearGradient>
+                    <linearGradient id="play_d" x1="0.68" y1="-6.12" x2="9.05" y2="2.25" gradientUnits="userSpaceOnUse"><stop stop-color="#32A071"/><stop offset=".07" stop-color="#2DA771"/><stop offset=".48" stop-color="#15CF74"/><stop offset=".8" stop-color="#06E775"/><stop offset="1" stop-color="#00F076"/></linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div><span class="kyc-store-label">GET IT ON</span><span class="kyc-store-name">Google Play</span></div>
+            </a>
+            <a href="https://apps.apple.com/app/mfbharat" target="_blank" rel="noreferrer" class="kyc-store-btn">
+              <div class="kyc-store-icon-wrap apple">
+                <svg width="22" height="22" viewBox="0 0 814 1000" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 696 0 556 0 426.4c0-206.8 134.4-315.3 266.1-315.3 61 0 111.4 40.8 149.6 40.8 36.4 0 93.8-43.2 164-43.2 21.5 0 108.2 2.5 168.7 80.6zm-56.8-215.5c27.7-35.8 47.9-85.9 47.9-135.8 0-6.9-.5-13.9-1.5-20.7-45.3 1.7-98.8 30.2-131.2 70.5-24.5 28.5-50.1 75.6-50.1 129.3 0 7.5 1.5 14.9 2 17.2 2.9.5 7.3 1 11.7 1 40.8 0 91.4-27.4 121.2-61.5z"/>
+                </svg>
+              </div>
+              <div><span class="kyc-store-label">DOWNLOAD ON THE</span><span class="kyc-store-name">App Store</span></div>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /kyc-card -->
+    </main>
+  </div><!-- /kyc-main -->
+
+</div><!-- /kyc-layout -->
+
+
+
+<!-- ── Floating CTA Pill ── -->
+<div class="kyc-float-pill">
+  <span class="kyc-float-pill-text">Har Ghar Mutual Fund</span>
+  <a href="/kyc" class="kyc-float-pill-btn">Get App — Free</a>
+</div>
